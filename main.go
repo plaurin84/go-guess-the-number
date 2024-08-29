@@ -8,10 +8,17 @@ import (
 	"math/rand"
 )
 
+func setRandomNumber(maxRange int) int {
+	fmt.Println("Guess The Number! Choose a number between 0 and", maxRange, "and press enter.")
+	return rand.Intn(maxRange)
+}
+
 func main() {
 	var input int
-	randomNumber := rand.Intn(5)
-	fmt.Println("Guess The Number! Choose a number between 0 and 5 and press enter.")
+	maxRange := 5
+
+	randomNumber := setRandomNumber(maxRange)
+
 	for {
 		fmt.Scanln(&input)
 		if input != randomNumber {
